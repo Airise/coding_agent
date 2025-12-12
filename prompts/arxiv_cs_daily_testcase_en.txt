@@ -1,0 +1,14 @@
+Test Case: Generate an "arXiv CS Daily" Webpage
+
+Task Instruction
+Build an "arXiv CS Daily" webpage with three core functionalities to deliver a streamlined experience for tracking daily computer science preprints:
+
+1. Domain-Specific Navigation System
+Implement categorized navigation based on arXiv's primary CS fields (cs.AI, cs.TH, cs.SY, etc.). This enables users to quickly filter and switch between major subfields, ensuring easy access to their areas of interest.
+
+2. Daily Updated Paper List
+Create a daily updated list displaying the latest papers with essential details only. Each entry may include the paper title (hyperlinked to its detail page), submission time, and the specific arXiv field tag (e.g., [cs.CV]).
+
+3. Dedicated Paper Detail Page
+Design a comprehensive detail page that centralizes critical resources: direct PDF link (hosted on arXiv), core metadata (title, authors with affiliations, submission date), and citation generation tools supporting common formats (BibTeX, standard academic citation) with one-click copy functionality.
+

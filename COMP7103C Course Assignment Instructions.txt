@@ -1,0 +1,92 @@
+COMP7103C Course Assignment
+Code Agent Building
+1. Background & Motivation
+AI-driven programming paradigms are transforming software development with the rise of Large Language Models (LLMs). Simple code snippet generation is no longer sufficient-the industry is now exploring advanced "Agentic Systems," where AI Agents autonomously understand, plan, code, and deliver complete software projects.
+This hands-on project puts you at the forefront of this technological revolution. You will design and build a multi-agent collaborative system capable of creating code repositories from scratch. Through this practical experience, you will develop deep understanding of AI's transformative potential in software engineering while mastering essential skills for building next-generation development tools that are reshaping the industry.
+
+2. Learning Objectives
+Upon completing this project, you will be able to:
+• Design	Multi-Agent Architectures:	Implement agents with specialized roles and develop effective orchestration	systems for seamless collaboration
+• Integrate	LLM APIs:	Master engineering best practices for stable API communication with major		LLMs (e.g., DeepSeek, Qwen, GPT, Claude).
+• Implement		Agent Tools:	Empower agents to interact with environments like local filesystems	through advanced function-calling capabilities
+• Architect	Advanced Agent Communication:	Design sophisticated instruction protocols that effectively guide the	behavior and decision-making of different agent roles
+• Practice	Task Decomposition & Collaboration:	Train an agent system to break down high-level objectives into concrete	sub-tasks and coordinate their execution among multiple agents.
+• Evaluate	AI-Generated Quality:	Assess	the structure, readability, and functional completeness of AI-generated	software projects.
+
+3. Core Project Description
+You are required to build a multi-agent collaborative system that autonomously completes software development from natural language task descriptions. The core challenge is designing
+
+an effective orchestration framework that enables specialized agents to communicate, coordinate, and deliver complete functional software projects. Reference design framework is provided below:
+
+Role-Specific Agents
+• Project Planning Agent: Handles high-level planning, designs software architecture, and breaks down initial requirements into executable task lists with clear technical specifications and dependencies
+• Code Generation Agent: Executes concrete development tasks, receives explicit instructions and utilizes programming tools to implement code solutions.
+• Code Evaluation Agent: Reviews and validates code quality, functionality, and adherence to requirements through automated testing and analysis.
+
+Multi-Agent Orchestrator
+For multi-agent interaction and memory management, consider the following components:
+• Task Scheduling: Task Scheduling: Determining which agent should work next and coordinating task dependencies across the system
+• Communication Management: Establishing protocols for seamless information exchange and collaboration between specialized agents
+• State Management: Tracking global project state, maintaining shared memory, and determining final task completion status
+
+Tool Kit
+Potential tool kits that may be utilized include:
+• Filesystem Tools: create_file, write_to_file, read_file, and other file management operations
+• Web Search Tool: Simulated search functionality to retrieve external knowledge and documentation
+• Code Execution Tool: Shell command execution capabilities for testing and validation (use with appropriate safety measures)
+
+4. Test Case: Generate an "arXiv CS Daily" Webpage
+
+Task Instruction
+Build an "arXiv CS Daily" webpage with three core functionalities to deliver a streamlined experience for tracking daily computer science preprints:
+1. Domain-Specific Navigation System
+
+Implement categorized navigation based on arXiv's primary CS fields (cs.AI, cs.TH, cs.SY, etc.). This enables users to quickly filter and switch between major subfields, ensuring easy access to their areas of interest.
+2. Daily Updated Paper List
+Create a daily updated list displaying the latest papers with essential details only. Each entry may include the paper title (hyperlinked to its detail page), submission time, and the specific arXiv field tag (e.g., [cs.CV]).
+3. Dedicated Paper Detail Page
+Design a comprehensive detail page that centralizes critical resources: direct PDF link (hosted on arXiv), core metadata (title, authors with affiliations, submission date), and citation generation tools supporting common formats (BibTeX, standard academic citation) with one-click copy functionality.
+
+Example
+HomePage:
+
+
+
+Sub-Pages:
+
+
+
+
+
+
+
+5. Deliverables
+• Git Repository Link: Complete source code of your agent system with a detailed README.md file explaining project architecture, setup instructions, and key execution examples.
+• Project Report (PDF): Comprehensive documentation detailing system design, key challenges and solutions, results analysis, and reflections.
+
+• In-person Meeting with TAs: Live demonstration showcasing your coding agent's performance on practical tasks.
+
+6. Hints & Suggestions
+• Start Small: Begin by implementing a single agent that creates one file, then gradually scale up functionality.
+• Leverage Logging: Implement detailed logs of agent thoughts and actions for effective debugging and system analysis.
+• Iterate on Prompts: Continuously refine your system prompts based on observed agent behavior and performance.
+• Manage Costs: Use lower-cost models during development phase and switch to high- performance models for final testing.
+• Learn From, But Do Not Copy: Study existing frameworks like AutoGen or ChatDev for insights, but ensure your implementation is original.
+LLM API you may consider using:
+• DeepSeek: DeepSeek V3.1: deepseek/deepseek-chat-v3.1
+• Z.AI: GLM 4.5 Air: z-ai/glm-4.5-air
+• DeepSeek: R1 0528: deepseek/deepseek-r1-0528
+• Qwen: Qwen3 Coder 480B A35B: qwen/qwen3-coder
+• Qwen: Qwen3 235B A22B: qwen/qwen3-235b-a22b
+• Meta: Llama 3.3 70B Instruct: meta-llama/llama-3.3-70b-instruct
+• OpenAI: gpt-oss-20b: openai/gpt-oss-20b
+• MoonshotAI: Kimi K2 0711: moonshotai/kimi-k2 Web Search tools you may consider using:
+• Brave_Search: https://github.com/modelcontextprotocol/servers- archived/tree/main/src/brave-search
+• Fetch: https://github.com/modelcontextprotocol/servers/tree/main/src/fetch Code Execution tools you may consider using:
+• Code_Executor: https://github.com/bazinga012/mcp_code_executor
+• Commands: https://github.com/g0t4/mcp-server-commands
+
+TA Contact Information
+For questions and support, please contact:
+
+Zongwei Li: zongwei9888@gmail.com Yangqin Jiang: mrjiangyq99@gmail.com
