@@ -115,6 +115,3 @@
     *   在你的浏览器中打开 `project/arxiv_cs_daily/index.html` 文件，即可看到最终的、功能齐全的网站。
 
 这个过程将在 `project/arxiv_cs_daily` 目录中创建一个完整、可运行且功能正确的 Web 应用程序，完全满足测试用例的所有要求。
-=======
-# coding_agent
->>>>>>> a287e076d4eb3beeee590de58fec0c4e78e298e6
