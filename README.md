@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Multi-Agent Code Generation System
 
 ## 1. 概述
