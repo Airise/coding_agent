@@ -79,6 +79,15 @@ def run_test(test_command: str) -> Tuple[bool, str]:
             return True, f"Assertion passed! Found '{expected_string}' in {file_path}."
         except Exception as e:
             return False, f"Failed to read file {file_path}: {e}"
+    
+    # Assert that a file or directory exists
+    if test_command.startswith("assert_exists:"):
+        path_str = test_command.replace("assert_exists:", "").strip()
+        p = Path(runtime.workspace_root) / path_str
+    if p.exists():
+        return True, f"Assertion passed! Path exists: {p}"
+    return False, f"Assertion failed: Expected path not found: {p}"
+
 
     # For all other commands, just run them via the shell
     return_code, stdout, stderr = shell.run(test_command)

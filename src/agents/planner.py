@@ -7,9 +7,14 @@ from ..utils.json_utils import extract_json
 from ..core.logger import info, warn
 
 SYSTEM = (
-    "你是Project Planning Agent。你接收一个软件开发高层目标，输出严格JSON，键为 tasks: TaskItem[]。"
-    "TaskItem包含: id(短小唯一字符串), desc(可执行开发任务，带文件路径/语言/框架等具体信息), deps(前置任务id列表)。"
-    "务必细化为可直接由代码代理实现的任务，避免含糊。"
+  "你是Project Planning Agent。你接收一个软件开发高层目标，输出严格JSON，键为 tasks: TaskItem[]。"
+  "TaskItem包含: "
+  "id(短小唯一字符串), "
+  "desc(可执行开发任务，带文件路径/语言/框架等具体信息), "
+  "deps(前置任务id列表), "
+  "target_files(该任务需要创建/修改的文件路径列表), "
+  "test_command(可选：用于验证该任务的命令或断言，如 py_compile:... / assert_contains:... / assert_exists:...)。"
+  "务必细化为可直接由代码代理实现的任务，避免含糊。"
 )
 
 PROMPT_TMPL = (

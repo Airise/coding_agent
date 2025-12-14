@@ -21,8 +21,11 @@ PROMPT_TMPL = (
     "Now, generate the complete and updated code for the file `{file_path}`."
 )
 
-# Heuristic to find the target file path from a task description
-_RE_FILE_PATH = re.compile(r"(?:create|modify|generate|write|implement|update) `?([\w\./\-_]+(?:\.py|\.html|\.css|\.js|\.json))`?", re.IGNORECASE)
+_RE_FILE_PATH = re.compile(r"`?([\w\./\-_]+(?:\.py|\.html|\.css|\.js|\.json))`?", re.IGNORECASE)
+
+def _extract_path_from_desc(desc: str) -> str | None:
+    m = _RE_FILE_PATH.search(desc)
+    return m.group(1) if m else None
 
 def _extract_path_from_desc(desc: str) -> str | None:
     match = _RE_FILE_PATH.search(desc)
@@ -46,8 +49,9 @@ def apply_coder_output(out: CoderOutput) -> None:
     for cmd in out.commands:
         shell.run(cmd.cmd, cwd=cmd.cwd)
 
-def implement(goal: str, task_desc: str, mode: str = "full") -> CoderOutput:
-    file_path = _extract_path_from_desc(task_desc)
+def implement(goal: str, task_desc: str, mode: str = "full", file_path: str | None = None) -> CoderOutput:
+    if file_path is None:
+        file_path = _extract_path_from_desc(task_desc)
     if not file_path:
         warn(f"Could not extract file path from task description: {task_desc}")
         return CoderOutput()
