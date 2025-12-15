@@ -98,7 +98,7 @@
 
 1.  **运行自动生成与修复流程**:
     ```bash
-    py -3.12 -m src.main --phased --auto-fix
+    python -m src.main --phased --auto-fix
     ```
     *   `--phased`: 此标志启用稳健的、多阶段的生成计划（骨架 -> JS 逻辑 -> 数据获取 -> 构建），该计划已在 `Orchestrator` 中硬编码以实现最高可靠性。
     *   `--auto-fix`: 此标志激活“Test-Driven Fix”循环。在每个步骤之后，`Test` Agent 将验证生成的代码，如果发现任何问题，`Fixer` Agent 将尝试修复它们。
@@ -106,7 +106,7 @@
 2.  **手动运行最终的构建脚本**:
     *   `--auto-fix` 流程会生成并修复 Python 脚本，但构建网站的最后一步需要手动运行。
     ```bash
-    py -3.12 project/arxiv_cs_daily/src/build_site.py
+    python project/arxiv_cs_daily/src/build_site.py
     ```
     *   你应该能看到表明构建过程正在运行并成功完成的输出。
 
